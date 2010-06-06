@@ -52,7 +52,7 @@
 	<h3>Web Forms 2.0</h3>
 
 	<p>
-		<a href="http://www.whatwg.org/specs/web-forms/current-work/#form-validation" class="external">Web Forms 2.0</a> is a large and complex standard. This tool follows the standard and uses a sane subset of it. For example, you can use the <samp>form.checkValidity()</samp> method or you can define an <samp>oninvalid</samp> callback functions for your inputs.
+		<a href="http://www.whatwg.org/specs/web-forms/current-work/#form-validation" class="external">Web Forms 2.0</a> is a large and complex standard. This tool follows the standard and uses a sane subset of it. For example, you can use the <samp>form.checkValidity()</samp> method or you can define <samp>oninvalid</samp> callbacks function for your inputs.
 	</p>
 
 </div>
@@ -194,7 +194,7 @@ inputs.data("validator").checkValidity();
 		<td class="code">required</td>
 		<td><code>"required"</code></td>
 		<td>
-			Makes value submission mandatory for this field. The standard syntax is <samp>required="required"</samp>, but this tool allows you to write <samp>required="true"</samp> or simply <samp>required</samp>. Works with checkbox and SELECT fields too. 
+			Makes value submission mandatory for this field. The standard syntax is <samp>required="required"</samp>, but this tool allows you to write <samp>required="true"</samp> or simply <samp>required</samp>. Works with checkbox and SELECT fields too.
 		</td>
 	</tr>
 </table>
@@ -348,13 +348,6 @@ $("fieldset:eq(1)").attr("disabled", true);
 		<td><code>'center right'</code></td>
 		<td>
 			Specifies the position of the error message. See the <a href="#positioning">positioning details</a> for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">relative</td>
-		<td><code>false</code></td>
-		<td>
-			Error messages are positioned relative to the document (by using the <samp>offset()</samp> method of jQuery) like in a <samp>position: absolute</samp> CSS directive. By enabling this property the tooltip position is determined relative to the parent element. This should be enabled if you have input fields inside a scrollable for example.
 		</td>
 	</tr>
 	<tr>
@@ -705,7 +698,15 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 			Invalidates the form with the error messages given in the argument. Causes the <samp>onFail</samp> event and input specific <samp>ininvalid</samp> events to be fired. This function is useful for <a href="#server_side">server-side integration</a>.
 		</td>
 	</tr>
+	<tr>
+		<td class="code">reset(jQuery)</td>
+		<td><code>API</code></td>
+		<td>
+			<strong>since 1.2.2</strong> resets the input fields given in the argument. This makes the specified fields valid which is the opposite of the <samp>invalidate</samp> method. If no fields are give then all inputs are made valid. If you have a reset button on your form this reset function is automatically bind to it.
+		</td>
+	</tr>
 </table>
+
 <%--}}}--%>
 
 

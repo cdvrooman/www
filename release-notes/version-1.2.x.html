@@ -1,0 +1,159 @@
+<%-- :mode=jsp: --%>
+<h1 id="hero">
+	<span></span>
+	Bug Fixes
+	<em>For jQuery Tools <strong>1.2</strong></em>
+</h1>
+
+<script>
+
+</script>
+
+<div id="breadcrumb">
+	<a href="../index.html">Introducing v1.2.0 &raquo;</a> Bug fix releases
+</div>
+
+<a name="1.2.2"></a>
+<h2 class="first">May 21, 2010. Version 1.2.2</h2>
+
+<h3>Validator</h3>
+
+<ul>
+	<li>
+		A new <samp>reset</samp> function that can be used to make inputs valid again. Thanks <a href="http://flowplayer.org/tools/forum/60/41485">JvdMeulen</a> for the suggestion.
+		</li>
+	<li>
+		If a form has a reset button then the <samp>reset</samp> function is automatically bound to it. Thanks <a href="http://github.com/jquerytools/jquerytools/issues/#issue/43">maksimc</a>
+	</li>
+	<li>
+		A null pointer check for the <samp>localize</samp> function. Thanks <a href="http://github.com/jquerytools/jquerytools/issues/#issue/42">maksimc</a>
+	</li>
+	<li>
+		Removed a <samp>relative</samp> configuration variable which was misleading and did not work. Thanks
+		<a href="http://github.com/jquerytools/jquerytools/issues#issue/40">doublex</a>.
+	</li>
+</ul>
+
+<h3>Dateinput</h3>
+
+<ul>
+	<li>
+		Now it's possible to go back to previous year with the month selector buttons. Thanks
+		<a hef="http://github.com/jquerytools/jquerytools/issues/closed#issue/37"> thedotedge </a>, <a href="http://flowplayer.org/tools/forum/70/41114">JvdMeulen</a>.
+	</li>
+	<li>
+		Possible to go back to previous year. Thanks
+		<a href="http://github.com/jquerytools/jquerytools/issues/closed#issue/38">thedotedge</a>
+	</li>
+	<li>
+		Support for <samp>required</samp> attribute. Thanks <a href="http://flowplayer.org/tools/forum/70/41502">JvdMeulen</a>.
+	</li>
+	<li>
+		A possibility to clear the dateinput value with backspace key. Thanks <a href="http://flowplayer.org/tools/forum/70/41293">hapasurfer</a>
+	</li>
+</ul>
+
+<h3>Scrollable</h3>
+
+<ul>
+	<li>
+		Brought back the missing <samp>speed</samp> configuration variable. Thanks <a href="http://github.com/jquerytools/jquerytools/issues/#issue/36">MichaelR</a>.
+	</li>
+	<li>
+		Fixed a bug where a circular scrollable scrolled from the end to the beginning when being clicked rapidly on the edge items. Thanks to me!
+	</li>
+	<li>
+		Not probably the best place to put this but <strong>dustmoo</strong> has written a step by step checklist about <a href="http://flowplayer.org/tools/forum/35/41546">Getting Scrollable 1.2.1 working</a>. Many thanks!
+	</li>
+</ul>
+
+<h3>Other Tools</h3>
+
+<ol>
+	<li>
+		<strong>Rangeinput</strong> Support for <samp>required</samp> attribute. Thanks <a href="http://flowplayer.org/tools/forum/70/41502">JvdMeulen</a>.
+	</li>
+	<li>
+		<strong>Expose</strong> Ability to use different colors on the mask if a page has many different masks. Previously whichever mask was opened first dictated colors the others masks would use. Thanks <a href="http://flowplayer.org/tools/forum/40/41077">ofirb</a>
+	</li>
+	<li>
+		<strong>Flashembed</strong> Removed extra quotation from the generated object code. Thanks <a href="http://flowplayer.org/forum/8/40703">mfb</a>
+	</li>
+	<li>
+		<strong>Tooltip</strong> Made it work together with the <samp>fade</samp> effect and <samp>opacity</samp> configuration variable. Thanks <a href="http://flowplayer.org/tools/forum/30/40683">attila</a>.
+	</li>
+
+</ol>
+
+<%--
+	Tooltip
+	on statically positioned element offset() --> offset() (no css()) Scott González!
+--%>
+
+<a name="1.2.1"></a>
+<h2>May 15, 2010. Version 1.2.1</h2>
+
+<h3>Validator</h3>
+
+<ol>
+	<li>
+		Addded <samp>required</samp> attribute support for checkbox and select inputs. Thanks <a href="http://flowplayer.org/tools/forum/60/40480">listingwarebob</a> for the bug report.
+	</li>
+	<li>
+		Improved the email validation pattern that allows <samp>+</samp> sign to be used in the email. For example: foo+bar@gmail.com. Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/22">bhickey</a> for the bug report.
+	</li>
+	<li>
+		Fixed a bug where validator could not be used directly with a group of inputs. Thanks <a href="http://flowplayer.org/tools/forum/60/40618">mjj</a> for the bug report.
+	</li>
+	<li>
+		Removed the support for <samp>oninvalid</samp>- attribute on input fields. This required the use of <samp>eval()</samp> function in JavaScript which is considered evil. Also modern browsers such as the latest <strong>Chrome 5.0 Beta</strong> support the <samp>oninvalid</samp> attribute natively causing unpredictable results.
+	</li>
+</ol>
+
+<h3>Dateinput</h3>
+
+<ol>
+	<li>
+		Ability to define the initial value manually with the <samp>value</samp> property. Thanks <a href="http://flowplayer.org/tools/forum/70/40613">listingwarebob</a>.
+	</li>
+	<li>
+		Ability to prevent the calendar from being hidden by returning <samp>false</samp> from <samp>onHide</samp>. This allows you to display Dateinput statically so that it always visible. Here is a demo about <a href="/tools/demos/dateinput/static.html">static dateinput</a>. Thanks <a href="http://flowplayer.org/tools/forum/70/40780#post-40979">enminc</a> for the suggestion.
+	</li>
+	<li>
+		Removed support for <samp>valueAsDate</samp> DOM property. Latest browsers such as <strong>Chrome 5.0 Beta</strong> support this attribute natively and do not allow the editing of this property. To make this library work similarly in all browsers this property had to be removed.
+
+		<p>
+			In fact the support for this property caused the latest Chrome to fail. Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/24">bbangert</a> for the bug report.
+		</p>
+	</li>
+	<li>
+		Fixed a bug in the month selector. Thanks <a href="http://flowplayer.org/tools/forum/70/40544">mbuckbee</a> for the bug report.
+	</li>
+	<li>
+		Some special dates could not be displayed. Thanks <a href="http://flowplayer.org/tools/forum/70/40551">mcjiffy</a> for the bug report.
+	</li>
+</ol>
+
+<h3>Other Tools</h3>
+
+<ol>
+	<li>
+		<strong>Rangeinput</strong> removed support for <samp>valueAsNumber</samp> DOM attribute due to the same reasons as <samp>valueAsDate</samp> attribute was removed from Dateinput.
+	</li>
+	<li>
+		<strong>Flashembed</strong> If no Flash is installed a version [0, 0] is returned. Previously an error was thrown in browsers without any Flash version. This is a very important fix.
+	</li>
+	<li>
+		<strong>Slideshow plugin</strong> Fixed a bug where initial tab contents were not displayed on Webkit-based browsers with external stylesheets. Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/25">ngosteli</a> for the bug report.
+	</li>
+	<li>
+		<strong>All Tools</strong> Switched from jQuery version 1.4.1 to 1.4.2. There was an old version installed on CDN. Thanks to <a href="http://flowplayer.org/tools/forum/20/40767">johndwells</a> for bringing this up.
+	</li>
+	<li>
+		<strong>Tooltip</strong> Fixed a bug where the configured layout was overridden with a <samp>html()</samp> call. Now <samp>append</samp> is used instead. Thanks <a href="http://flowplayer.org/tools/forum/30/40958">radarseven</a> for the bug report.
+	<li>
+		<strong>Scrollable</strong> <samp>getIndex()</samp> was returning negative numbers in circular looping. Now this is fixed and the correct index number is returned. Thanks <a href="http://flowplayer.org/tools/forum/35/40706">m4olivei</a> for the bug report.
+	</li>
+</ol>
+
+
